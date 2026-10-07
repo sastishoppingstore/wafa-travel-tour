@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-200: #a7f3d0;
+  --color-primary-300: #6ee7b7;
+  --color-primary-400: #34d399;
+  --color-primary-500: #0d7c3e;
+  --color-primary-600: #065f2e;
+  --color-primary-700: #064e26;
+  --color-primary-800: #043f1f;
+  --color-primary-900: #022c15;
+  --color-primary-950: #011a0d;
+
+  --color-gold-50: #fefce8;
+  --color-gold-100: #fef9c3;
+  --color-gold-200: #fef08a;
+  --color-gold-300: #fde047;
+  --color-gold-400: #facc15;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b8960f;
+  --color-gold-700: #a17c0c;
+  --color-gold-800: #85640a;
+  --color-gold-900: #6b4f08;
+
+  --color-cream-50: #fefdfb;
+  --color-cream-100: #fdf8f0;
+  --color-cream-200: #faf0dd;
+  --color-cream-300: #f5e4c4;
+  --color-cream-400: #edd5a6;
+  --color-cream-500: #e4c488;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-urdu: 'Noto Nastaliq Urdu', serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-pulse-gold: pulseGold 2s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+/* ============================================
+   DESIGN SYSTEM — WAFA Travel & Tour
+   ============================================ */
+
+@layer base {
+  :root {
+    --color-bg: #ffffff;
+    --color-surface: #f8faf9;
+    --color-text: #1a1a2e;
+    --color-text-muted: #64748b;
+    --color-border: rgba(6, 78, 38, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.3);
+  }
+
+  .dark {
+    --color-bg: #0a0f0d;
+    --color-surface: #111b16;
+    --color-text: #e8f5e9;
+    --color-text-muted: #94a3b8;
+    --color-border: rgba(212, 175, 55, 0.15);
+    --glass-bg: rgba(17, 27, 22, 0.8);
+    --glass-border: rgba(212, 175, 55, 0.2);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    overflow-x: hidden;
+  }
+
+  [lang="ur"] body,
+  [lang="ur"] * {
+    font-family: var(--font-urdu);
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Primary button */
+  .btn-primary {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, var(--color-primary-600), var(--color-primary-500));
+    color: white;
+    font-weight: 600;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(13, 124, 62, 0.25);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 15px 35px -5px rgba(13, 124, 62, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  /* Gold button */
+  .btn-gold {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, var(--color-gold-500), var(--color-gold-400));
+    color: var(--color-primary-900);
+    font-weight: 700;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.25);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-gold:hover {
+    box-shadow: 0 15px 35px -5px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .btn-gold:active {
+    transform: scale(0.95);
+  }
+
+  /* Outline button */
+  .btn-outline {
+    padding: 1rem 2rem;
+    border: 2px solid var(--color-primary-500);
+    color: var(--color-primary-600);
+    font-weight: 600;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary-500);
+    color: white;
+  }
+
+  /* Section styling */
+  .section-title {
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-family: var(--font-serif);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--color-primary-700), var(--color-primary-500), var(--color-gold-500));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #0d7c3e, #d4af37, #064e26);
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0d7c3e, #d4af37);
+    border-radius: 4px;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

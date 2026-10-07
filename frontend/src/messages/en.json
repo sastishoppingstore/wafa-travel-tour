@@ -1,0 +1,177 @@
+{
+  "nav": {
+    "home": "Home",
+    "hajjUmrah": "Hajj & Umrah",
+    "flights": "Flights",
+    "tours": "Tours",
+    "overseasJobs": "Overseas Jobs",
+    "visa": "Visa Services",
+    "hotels": "Hotels",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "title": "Travel with Trust. Travel with WAFA.",
+    "subtitle": "Your Trusted Journey Partner — Hajj, Umrah, International Tours, Flights, Visa & More",
+    "cta": "Explore Packages",
+    "ctaSecondary": "Book Now"
+  },
+  "quickSearch": {
+    "flights": "Flights",
+    "umrahHajj": "Umrah & Hajj",
+    "tours": "Tours",
+    "jobs": "Overseas Jobs",
+    "from": "From",
+    "to": "To",
+    "depart": "Departure",
+    "return": "Return",
+    "passengers": "Passengers",
+    "cabin": "Cabin Class",
+    "search": "Search",
+    "destination": "Destination",
+    "duration": "Duration",
+    "budget": "Budget",
+    "country": "Country",
+    "category": "Category"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive travel solutions tailored for you",
+    "hajjUmrah": {
+      "title": "Hajj & Umrah",
+      "desc": "Sacred journeys with premium accommodation near Haram, experienced guides, and complete visa support."
+    },
+    "flights": {
+      "title": "Flight Booking",
+      "desc": "Domestic and international flights at competitive prices with 24/7 booking support."
+    },
+    "tours": {
+      "title": "Tour Packages",
+      "desc": "Curated international and domestic tours — from Turkey and Dubai to Hunza and Skardu."
+    },
+    "visa": {
+      "title": "Visa Services",
+      "desc": "Expert visa assistance for all countries with high approval rates and fast processing."
+    },
+    "hotels": {
+      "title": "Hotel Booking",
+      "desc": "Worldwide hotel reservations at exclusive rates, from budget to luxury properties."
+    },
+    "employment": {
+      "title": "Overseas Employment",
+      "desc": "Licensed manpower services connecting skilled workers with top employers worldwide."
+    },
+    "corporate": {
+      "title": "Corporate Travel",
+      "desc": "Tailored corporate and group travel solutions with dedicated account management."
+    }
+  },
+  "packages": {
+    "title": "Featured Packages",
+    "subtitle": "Handpicked travel experiences at unbeatable prices",
+    "filters": {
+      "all": "All",
+      "hajj": "Hajj",
+      "umrah": "Umrah",
+      "international": "International",
+      "domestic": "Domestic"
+    },
+    "from": "From",
+    "perPerson": "/person",
+    "days": "days",
+    "nights": "nights",
+    "viewDetails": "View Details",
+    "bookNow": "Book Now"
+  },
+  "destinations": {
+    "title": "Popular Destinations",
+    "subtitle": "Explore the world's most sought-after destinations",
+    "makkah": "Makkah",
+    "madinah": "Madinah",
+    "dubai": "Dubai",
+    "turkey": "Turkey",
+    "malaysia": "Malaysia",
+    "thailand": "Thailand",
+    "hunza": "Hunza",
+    "skardu": "Skardu",
+    "swat": "Swat",
+    "murree": "Murree"
+  },
+  "whyChoose": {
+    "title": "Why Choose WAFA Travel?",
+    "subtitle": "Trusted by thousands of travelers across Pakistan",
+    "years": "Years Experience",
+    "travelers": "Happy Travelers",
+    "support": "24/7 Support",
+    "price": "Best Price Guarantee",
+    "licensed": "Licensed Agency",
+    "badge1": "Government Licensed",
+    "badge2": "IATA Member",
+    "badge3": "Secure Payments",
+    "badge4": "Expert Guidance"
+  },
+  "testimonials": {
+    "title": "What Our Travelers Say",
+    "subtitle": "Real experiences from real customers"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our services",
+    "items": [
+      {
+        "q": "How do I book a Hajj or Umrah package?",
+        "a": "You can book through our website, visit our office, or contact us via WhatsApp. Our team will guide you through the complete process including visa, flights, accommodation, and Ziyarat."
+      },
+      {
+        "q": "What documents are required for visa processing?",
+        "a": "Requirements vary by country but generally include a valid passport (6+ months), CNIC, photographs, bank statements, and employment letter. Contact us for country-specific requirements."
+      },
+      {
+        "q": "Do you offer group discounts?",
+        "a": "Yes! We offer special rates for group bookings on flights, tours, and Umrah packages. Contact our corporate travel desk for customized group quotes."
+      },
+      {
+        "q": "What payment methods do you accept?",
+        "a": "We accept bank transfers, JazzCash, Easypaisa, and credit/debit cards. Payment plans are available for select packages."
+      },
+      {
+        "q": "How can I apply for overseas employment through WAFA?",
+        "a": "Browse our job listings, submit your application with required documents, and our team will guide you through the verification, interview, medical, and visa process."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Start Your Journey?",
+    "subtitle": "Let WAFA Travel make your dream vacation a reality. Contact us today!",
+    "button": "Contact Us Now",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "footer": {
+    "tagline": "Your Trusted Journey Partner",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactUs": "Contact Us",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe for exclusive deals and travel tips",
+    "emailPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+    "rights": "All rights reserved.",
+    "address": "[Your Office Address, Lahore, Pakistan]",
+    "phone": "[+92-XXX-XXXXXXX]",
+    "email": "[info@wafatravel.com]",
+    "license": "[License No. XXXX]"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "backToTop": "Back to Top",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language"
+  }
+}

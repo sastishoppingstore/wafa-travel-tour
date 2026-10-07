@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+backend/vendor/
+
+# Build output
+frontend/.next/
+frontend/out/
+
+# Environment
+.env.local
+.env
+backend/.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Laravel
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+!backend/storage/framework/views/.gitkeep
+
+# Storage uploads (keep .gitkeep)
+backend/storage/app/public/*
+!backend/storage/app/public/.gitkeep
+
+# Misc
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
