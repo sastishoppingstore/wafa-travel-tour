@@ -1,180 +1,183 @@
-# WAFA Travel & Tour — Complete Web Application
+# 🌍 WAFA Travel & Tour — Premium 3D Animated Website
 
-A premium, 3D-animated travel agency website built with Next.js (frontend) and Laravel 11 (backend).
+**Complete full-stack travel agency website with Next.js 16 frontend + Laravel 11 backend.**
 
-## 📁 Project Structure
+🔗 **Live Repository:** https://github.com/sastishoppingstore/wafa-travel-tour
+
+---
+
+## 📋 Project Status
+
+| Phase | Description | Status |
+|-------|-------------|--------|
+| ✅ Phase 1 | Project setup, design system, Home page + 3D Globe hero | **Complete** |
+| ✅ Phase 2 | Laravel backend skeleton — 17 models, 4 migrations, 14 controllers, seeders | **Complete** |
+| ✅ Phase 3 | Hajj & Umrah, Tours pages | **Complete** |
+| ✅ Phase 4 | Flight ticket booking page | **Complete** |
+| ✅ Phase 5 | Overseas Employment page | **Complete** |
+| ✅ Phase 6 | Visa, Hotels, About, Blog, Gallery, Contact, FAQ | **Complete** |
+| ✅ Phase 7 | User Dashboard (bookings, job applications, profile), Auth pages | **Complete** |
+
+---
+
+## 🗂 Project Structure
 
 ```
 wafa-travel/
-├── frontend/          # Next.js 16 + React 19 + TypeScript + Tailwind CSS v4
+├── frontend/                    # Next.js 16 + TypeScript + Tailwind v4
 │   ├── src/
-│   │   ├── app/              # App Router (pages & layouts)
-│   │   │   ├── [locale]/     # i18n dynamic locale route
-│   │   │   └── globals.css   # Design system & global styles
-│   │   ├── components/       # Reusable components
-│   │   │   ├── 3d/           # React Three Fiber 3D scenes
-│   │   │   ├── animations/   # Framer Motion variants
-│   │   │   ├── home/         # Home page sections
-│   │   │   ├── layout/       # Header, Footer, WhatsApp, BackToTop
-│   │   │   └── ui/           # Shared UI components
-│   │   ├── i18n/             # Internationalization config
-│   │   ├── lib/              # Zustand stores, utilities
-│   │   ├── messages/         # EN & UR translation files
-│   │   └── types/            # TypeScript type definitions
-│   ├── .env.example
+│   │   ├── app/[locale]/       # 13 pages with i18n routing
+│   │   │   ├── page.tsx                # Home (3D Globe hero)
+│   │   │   ├── hajj-umrah/page.tsx     # Hajj & Umrah packages
+│   │   │   ├── flights/page.tsx        # Flight search & results
+│   │   │   ├── tours/page.tsx          # International & domestic tours
+│   │   │   ├── overseas-jobs/page.tsx  # Overseas employment
+│   │   │   ├── visa/page.tsx           # Visa services
+│   │   │   ├── hotels/page.tsx         # Hotel bookings
+│   │   │   ├── about/page.tsx          # About us
+│   │   │   ├── blog/page.tsx           # Travel blog
+│   │   │   ├── gallery/page.tsx        # Photo gallery
+│   │   │   ├── contact/page.tsx        # Contact form
+│   │   │   ├── dashboard/page.tsx      # User dashboard
+│   │   │   └── auth/{login,signup}/    # Authentication pages
+│   │   ├── components/
+│   │   │   ├── 3d/Globe.tsx            # Interactive 3D globe (Three.js)
+│   │   │   ├── animations/variants.ts  # Reusable Framer Motion variants
+│   │   │   ├── home/                   # 8 home page sections
+│   │   │   ├── layout/                 # Header, Footer, WhatsApp, BackToTop
+│   │   │   └── ui/                     # Shared UI components
+│   │   ├── i18n/                       # English/Urdu translations
+│   │   ├── lib/store.ts                # Zustand theme store
+│   │   └── messages/{en,ur}.json       # Full translations
 │   └── next.config.ts
 │
-└── backend/           # Laravel 11 REST API (Phase 2+)
+└── backend/                     # Laravel 11 REST API
     ├── app/
+    │   ├── Http/Controllers/Api/V1/  # 14 API controllers
+    │   ├── Models/                    # 17 Eloquent models
+    │   └── Services/                  # FlightSearchService (mock)
     ├── database/
-    ├── routes/
-    └── .env.example
+    │   ├── migrations/                # 4 migration files (all tables)
+    │   └── seeders/DatabaseSeeder.php # Realistic demo data
+    ├── routes/api.php                 # 35+ API endpoints
+    └── composer.json
 ```
 
-## 🛠 Tech Stack
+---
+
+## 🚀 How to Run
 
 ### Frontend
-- **Framework:** Next.js 16 (App Router) + TypeScript
-- **Styling:** Tailwind CSS v4, glassmorphism design system
-- **Animations:** Framer Motion (all UI), React Three Fiber + Drei (3D scenes)
-- **Scrolling:** Lenis smooth scrolling
-- **i18n:** next-intl (English / Urdu with RTL)
-- **State:** Zustand (theme, global state)
-- **Forms:** React Hook Form + Zod
-- **Data Fetching:** TanStack Query (ready for Phase 3+)
-- **Icons:** React Icons
-
-### Backend (Phase 2+)
-- **Framework:** Laravel 11 (PHP 8.2+)
-- **Auth:** Laravel Sanctum + Socialite (Google)
-- **Roles:** Spatie Laravel Permission
-- **Admin:** Filament PHP 3
-- **Database:** MySQL 8
-- **Queue:** Laravel Queues
-- **PDF:** DomPDF (e-tickets)
-- **API Docs:** Scribe
-
-## 🎨 Brand & Design
-
-| Element | Value |
-|---------|-------|
-| Primary Color | Deep Emerald Green (#064e26, #0d7c3e) |
-| Accent Color | Gold (#d4af37, #f0d060) |
-| Background | White (#fff) / Dark (#0a0f0d) |
-| Surface | Cream (#f8faf9) / Dark surface (#111b16) |
-| Heading Font | Playfair Display (serif) |
-| Body Font | Inter (sans-serif) |
-| Urdu Font | Noto Nastaliq Urdu |
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+
-- PHP 8.2+ (Phase 2+)
-- MySQL 8 (Phase 2+)
-- Composer (Phase 2+)
-
-### Frontend Setup
-
 ```bash
 cd frontend
-
-# Install dependencies
 npm install
-
-# Copy environment
 cp .env.example .env.local
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-npm start
+npm run dev          # → http://localhost:3000
 ```
 
-### Backend Setup (Phase 2+)
-
+### Backend (needs PHP 8.2+, MySQL, Composer)
 ```bash
 cd backend
-
-# Install dependencies
 composer install
-
-# Copy environment
 cp .env.example .env
 php artisan key:generate
-
-# Configure database in .env, then:
+# Configure database in .env
 php artisan migrate --seed
 php artisan storage:link
-
-# Start development server
-php artisan serve
-
-# Admin login: admin@wafatravel.com / password
+php artisan serve    # → http://localhost:8000
 ```
 
-## 📋 Build Phases
+**Demo admin login:** `admin@wafatravel.com` / `password`
 
-### ✅ Phase 1 — Foundation (COMPLETE)
-- [x] Next.js 16 project with TypeScript & Tailwind CSS v4
-- [x] Design system (colors, typography, glassmorphism, buttons)
-- [x] i18n with English & Urdu (RTL support)
-- [x] Dark mode toggle with system preference detection
-- [x] Responsive layout (Header with mobile menu, Footer)
-- [x] 3D Globe hero with flight arcs and orbiting airplane
-- [x] Quick search widget with tabs
-- [x] Services overview section
-- [x] Featured packages with animated filters
-- [x] Popular destinations grid
-- [x] Why Choose Us with animated counters
-- [x] Testimonials carousel
-- [x] FAQ accordion
-- [x] CTA section
-- [x] Floating WhatsApp button
-- [x] Back to top button
-- [x] All animations (Framer Motion variants, scroll reveals, stagger)
+---
 
-### Phase 2 — Laravel Backend (Next)
-- [ ] Laravel 11 setup with API structure
-- [ ] Database migrations & seeders
-- [ ] Auth with Sanctum + Google login
-- [ ] Roles & permissions (Spatie)
-- [ ] Filament admin panel
-- [ ] Core API endpoints
+## 🎨 Tech Stack
 
-### Phase 3–7 — Features & Polish
-See detailed requirements in the project specification.
+**Frontend:** Next.js 16 • TypeScript • Tailwind CSS v4 • Framer Motion • React Three Fiber + Drei • next-intl • Zustand • Lenis • React Hook Form + Zod • TanStack Query (ready)
+
+**Backend:** Laravel 11 • PHP 8.2 • MySQL • Sanctum • Spatie Permission • Socialite • Filament (ready) • DomPDF (ready) • Laravel Queues
+
+---
+
+## 🎯 Features Built
+
+### Frontend (13 Pages)
+- ✅ **Home** — 3D globe hero, quick search, services, packages, destinations, stats, testimonials, FAQ, CTA
+- ✅ **Hajj & Umrah** — Package tiers, step-by-step timeline, enquiry form
+- ✅ **Flights** — Search (one-way/round-trip), airline filters, sorting, animated results
+- ✅ **Tours** — 12 packages, category/search filters, destination cards
+- ✅ **Overseas Jobs** — Country grid, job listings, apply modal, process timeline
+- ✅ **Visa Services** — 8 countries, document checklists, processing times
+- ✅ **Hotels** — Featured properties worldwide
+- ✅ **About** — Story timeline, team cards, certifications
+- ✅ **Blog** — Articles with category filters
+- ✅ **Gallery** — Masonry grid with lightbox
+- ✅ **Contact** — Form, info cards, social links, map placeholder
+- ✅ **Dashboard** — Bookings tracker, job applications stepper, profile editor
+- ✅ **Auth** — Login + Signup with Google
+
+### Global Features
+- ✅ Dark mode toggle (system preference detection)
+- ✅ i18n (English / Urdu with RTL)
+- ✅ Glassmorphism design system
+- ✅ Animated 3D globe (React Three Fiber)
+- ✅ Framer Motion (scroll reveals, stagger, hover, page transitions)
+- ✅ Floating WhatsApp button
+- ✅ Back-to-top button
+- ✅ Responsive design (mobile-first)
+- ✅ `prefers-reduced-motion` support
+
+### Backend (API Skeleton)
+- ✅ 17 Eloquent models with relationships
+- ✅ 4 migration files covering all tables
+- ✅ 14 API controllers
+- ✅ 35+ REST endpoints (public, authenticated, admin)
+- ✅ DatabaseSeeder with realistic demo data
+- ✅ FlightSearchService (mock provider — swap with Amadeus/Sabre/GDS)
+- ✅ Job application tracking with status logs
+- ✅ File upload handling (CV, passport, payment proofs)
+- ✅ Payment approval workflow
+
+---
 
 ## 🔧 Placeholders to Replace
+
+Search for these in the codebase and replace with your actual data:
 
 | Placeholder | Location |
 |-------------|----------|
 | `[Logo]` | Header, Footer |
-| `[Phone Number]` | Footer, Contact page |
-| `[WhatsApp Number]` | WhatsApp button, CTA |
-| `[Address]` | Footer, Contact page |
-| `[Email]` | Footer, Contact page |
-| `[License No.]` | Footer, Overseas Employment |
-
-## 📄 Demo Admin (Phase 2)
-- **URL:** /admin
-- **Email:** admin@wafatravel.com
-- **Password:** password
-
-## 🌐 Deployment
-
-### cPanel (Shared Hosting)
-1. Build frontend: `npm run build` → upload `out/` folder
-2. Laravel: upload project, set document root to `/public`
-3. Configure `.htaccess` for API routing
-
-### VPS (Nginx + PM2)
-1. Frontend: `npm run build` → PM2 with `next start`
-2. Laravel: Nginx reverse proxy to PHP-FPM
-3. See detailed guide in `/docs/deployment.md`
+| `[Phone Number]` / `+92-300-1234567` | Footer, Contact, WhatsApp |
+| `[WhatsApp Number]` / `92XXXXXXXXXX` | WhatsApp button, CTA |
+| `[Address]` / `123 Main Boulevard` | Footer, Contact |
+| `[Email]` / `info@wafatravel.com` | Footer, Contact |
+| `[License No.]` / `BEOE-LHR-2024-XXXX` | Footer, Overseas Employment |
 
 ---
 
-**Built with ❤️ for WAFA Travel & Tour**
+## 📦 Deployment
+
+### cPanel (Shared Hosting)
+1. **Frontend:** `npm run build` → upload `out/` folder (static export)
+2. **Backend:** Upload via FTP, set document root to `/public`
+3. Run `composer install --optimize-autoloader --no-dev`
+4. Set `APP_ENV=production`, `APP_DEBUG=false`
+
+### VPS (Nginx + PM2)
+```bash
+# Frontend (PM2)
+cd frontend && npm run build
+pm2 start npm --name "wafa-frontend" -- start
+
+# Backend (Nginx + PHP-FPM)
+cd backend
+composer install --optimize-autoloader --no-dev
+php artisan config:cache route:cache
+# Configure Nginx to point root to /public
+```
+
+---
+
+## 📄 License
+
+Built for **WAFA Travel & Tour** — Your Trusted Journey Partner ✈️
