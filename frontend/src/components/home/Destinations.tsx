@@ -5,16 +5,16 @@ import { useTranslations } from 'next-intl';
 import { staggerContainer, staggerChild } from '@/components/animations/variants';
 
 const destinations = [
-  { key: 'makkah', emoji: '🕋', color: 'from-emerald-400 to-emerald-600' },
-  { key: 'madinah', emoji: '🕌', color: 'from-green-400 to-green-600' },
-  { key: 'dubai', emoji: '🏙️', color: 'from-amber-400 to-amber-600' },
-  { key: 'turkey', emoji: '🇹🇷', color: 'from-red-400 to-red-600' },
-  { key: 'malaysia', emoji: '🇲🇾', color: 'from-blue-400 to-blue-600' },
-  { key: 'thailand', emoji: '🇹🇭', color: 'from-purple-400 to-purple-600' },
-  { key: 'hunza', emoji: '🏔️', color: 'from-cyan-400 to-cyan-600' },
-  { key: 'skardu', emoji: '⛰️', color: 'from-teal-400 to-teal-600' },
-  { key: 'swat', emoji: '🌊', color: 'from-indigo-400 to-indigo-600' },
-  { key: 'murree', emoji: '🌲', color: 'from-lime-400 to-lime-600' },
+  { key: 'makkah', image: '/images/destinations/makkah.jpg' },
+  { key: 'madinah', image: '/images/destinations/madinah.jpg' },
+  { key: 'dubai', image: '/images/destinations/dubai.jpg' },
+  { key: 'turkey', image: '/images/destinations/turkey.jpg' },
+  { key: 'malaysia', image: '/images/destinations/malaysia.jpg' },
+  { key: 'thailand', image: '/images/destinations/thailand.jpg' },
+  { key: 'hunza', image: '/images/destinations/hunza.jpg' },
+  { key: 'skardu', image: '/images/destinations/skardu.jpg' },
+  { key: 'swat', image: '/images/destinations/hunza.jpg' },
+  { key: 'murree', image: '/images/destinations/skardu.jpg' },
 ];
 
 export default function Destinations() {
@@ -46,15 +46,19 @@ export default function Destinations() {
               variants={staggerChild}
               whileHover={{ y: -8, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="glass-card p-5 text-center group cursor-pointer overflow-hidden relative"
+              className="relative h-48 rounded-2xl overflow-hidden group cursor-pointer"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${dest.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-              <span className="text-4xl mb-3 block group-hover:scale-125 transition-transform duration-300">
-                {dest.emoji}
-              </span>
-              <h3 className="font-serif font-bold text-sm group-hover:text-primary-500 dark:group-hover:text-gold-400 transition-colors">
-                {t(dest.key)}
-              </h3>
+              <img
+                src={dest.image}
+                alt={t(dest.key)}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3">
+                <h3 className="font-serif font-bold text-sm text-white">
+                  {t(dest.key)}
+                </h3>
+              </div>
             </motion.div>
           ))}
         </motion.div>

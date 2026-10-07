@@ -11,7 +11,7 @@ const mockPackages = [
     id: 1,
     title: 'Umrah Economy Package',
     category: 'umrah',
-    image: '🕋',
+    image: '/images/destinations/makkah.jpg',
     days: 14,
     nights: 12,
     price: 285000,
@@ -22,7 +22,7 @@ const mockPackages = [
     id: 2,
     title: 'Hajj Premium Package',
     category: 'hajj',
-    image: '🕌',
+    image: '/images/destinations/makkah.jpg',
     days: 21,
     nights: 20,
     price: 850000,
@@ -33,7 +33,7 @@ const mockPackages = [
     id: 3,
     title: 'Dubai Adventure',
     category: 'international',
-    image: '🏙️',
+    image: '/images/destinations/dubai.jpg',
     days: 5,
     nights: 4,
     price: 125000,
@@ -44,7 +44,7 @@ const mockPackages = [
     id: 4,
     title: 'Turkey Explorer',
     category: 'international',
-    image: '🇹🇷',
+    image: '/images/destinations/turkey.jpg',
     days: 7,
     nights: 6,
     price: 185000,
@@ -55,7 +55,7 @@ const mockPackages = [
     id: 5,
     title: 'Hunza Valley Tour',
     category: 'domestic',
-    image: '🏔️',
+    image: '/images/destinations/hunza.jpg',
     days: 5,
     nights: 4,
     price: 45000,
@@ -66,7 +66,7 @@ const mockPackages = [
     id: 6,
     title: 'Malaysia Getaway',
     category: 'international',
-    image: '🇲🇾',
+    image: '/images/destinations/malaysia.jpg',
     days: 6,
     nights: 5,
     price: 165000,
@@ -77,7 +77,7 @@ const mockPackages = [
     id: 7,
     title: 'Skardu Expedition',
     category: 'domestic',
-    image: '🏔️',
+    image: '/images/destinations/skardu.jpg',
     days: 6,
     nights: 5,
     price: 55000,
@@ -88,7 +88,7 @@ const mockPackages = [
     id: 8,
     title: 'Umrah Standard Package',
     category: 'umrah',
-    image: '🕋',
+    image: '/images/destinations/madinah.jpg',
     days: 10,
     nights: 9,
     price: 395000,
@@ -162,11 +162,14 @@ export default function Packages() {
                 whileHover={{ y: -8 }}
                 className="glass-card overflow-hidden group cursor-pointer"
               >
-                {/* Image placeholder */}
-                <div className="relative h-48 bg-gradient-to-br from-primary-100 to-cream-100 dark:from-primary-900/30 dark:to-primary-800/30 flex items-center justify-center overflow-hidden">
-                  <span className="text-6xl group-hover:scale-125 transition-transform duration-500">
-                    {pkg.image}
-                  </span>
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={pkg.image}
+                    alt={pkg.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   <div className="absolute top-3 right-3 px-2.5 py-1 bg-white/90 dark:bg-black/60 rounded-lg text-xs font-medium">
                     <span className="text-gold-500">★</span> {pkg.rating}
                   </div>

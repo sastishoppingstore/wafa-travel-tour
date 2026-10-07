@@ -56,9 +56,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-lg shadow-primary-500/30">
-              <span className="text-white font-bold text-xl">W</span>
-            </div>
+            <img src="/images/logo.png" alt="WAFA Travel" className="w-12 h-12 rounded-xl object-contain" />
             <div className="hidden sm:block">
               <h1 className="text-xl font-serif font-bold text-primary-600 dark:text-primary-400">
                 WAFA
